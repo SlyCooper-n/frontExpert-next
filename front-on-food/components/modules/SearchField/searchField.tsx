@@ -1,3 +1,3 @@
-export default function SearchField() {
+export function SearchField() {
   return <div>SearchField</div>;
 }
