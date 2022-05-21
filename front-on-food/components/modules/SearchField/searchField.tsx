@@ -4,7 +4,7 @@ import LinkItem from "./linkItem";
 
 export function SearchField() {
   return (
-    <Menu as="section" className="mx-auto">
+    <Menu as="section" className="mx-auto font-semibold">
       <Menu.Button className="mx-auto flex w-full max-w-lg items-center justify-between rounded-full bg-white p-2 pl-8 text-[#777] shadow transition-colors hover:bg-gray-200">
         Select a city to start{" "}
         <span className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-500">
@@ -13,7 +13,7 @@ export function SearchField() {
       </Menu.Button>
 
       <Menu.Items className="relative mx-auto w-full max-w-md">
-        <div className="absolute mt-3 w-full overflow-hidden rounded-xl bg-white shadow">
+        <div className="absolute z-50 mt-3 w-full overflow-hidden rounded-xl bg-white shadow">
           <Menu.Item>
             <LinkItem
               href="/discover/sao-paulo-sp"
