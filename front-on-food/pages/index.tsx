@@ -1,5 +1,5 @@
 import Template from "components/layout/Template";
-import { SearchField } from "@/modules";
+import { Character, SearchField } from "@/modules";
 
 export default function Home() {
   return (
@@ -10,10 +10,12 @@ export default function Home() {
 
       <SearchField />
 
-      <h2 className="mt-12 text-center text-lg font-semibold leading-6 text-brand-900 md:text-xl md:leading-8">
+      <h2 className="mt-12 mb-28 text-center text-lg font-semibold leading-6 text-brand-900 md:text-xl md:leading-8">
         Find your new favourite delivery. Thousands of options just a click
         away.
       </h2>
+
+      <Character />
     </Template>
   );
 }
