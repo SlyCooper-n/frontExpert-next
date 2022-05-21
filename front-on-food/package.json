@@ -7,6 +7,7 @@
     "merge": "cd .. && git switch main && git merge dev && git push && git switch dev && cd front-on-food"
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.2",
     "next": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
