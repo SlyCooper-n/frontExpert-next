@@ -1,5 +1,5 @@
-import { NextPage } from "next";
+import Template from "components/layout/Template";
 
 export default function Favourites() {
-  return <div>Favourites</div>;
+  return <Template>Favourites</Template>;
 }
