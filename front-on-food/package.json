@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "merge": "cd .. && git switch main && git merge dev && git push && git switch dev && cd front-on-food"
   },
   "dependencies": {
     "next": "latest",
