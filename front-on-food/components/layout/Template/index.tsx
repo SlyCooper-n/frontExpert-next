@@ -1,15 +1,19 @@
+import Head from "next/head";
 import { Footer } from "./Footer";
-import { MyHead } from "./Head";
 import { Header } from "./Header";
 import { TemplateProps } from "./types";
 
-export default function Template({ title, children }: TemplateProps) {
+export default function Template({ type, children }: TemplateProps) {
   return (
-    <div className="min-h-screen">
-      <MyHead title={title} />
+    <div className="flex min-h-screen flex-col">
+      <Head>
+        <meta charSet="utf-8" />
+        <title>Front On Food</title>
+        <link rel="icon" href="/images/logo.png" />
+      </Head>
 
       <Header />
-      <main className="mx-auto max-w-7xl px-2">{children}</main>
+      <main className="mx-auto my-8 max-w-7xl flex-1 px-2">{children}</main>
       <Footer />
     </div>
   );
