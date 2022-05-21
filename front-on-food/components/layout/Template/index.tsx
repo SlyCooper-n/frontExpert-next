@@ -5,7 +5,7 @@ import { TemplateProps } from "./types";
 
 export default function Template({ type, children }: TemplateProps) {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-brand-50">
       <Head>
         <meta charSet="utf-8" />
         <title>Front On Food</title>
