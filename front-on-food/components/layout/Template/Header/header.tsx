@@ -6,7 +6,7 @@ import { IconHome, IconBookmark } from "@/icons";
 export function Header() {
   return (
     <header className="font-bold">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between py-8 px-2">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between py-16 px-2">
         <Link href="/">
           <a className="flex items-center gap-2 text-xl transition-opacity hover:opacity-80 md:text-2xl">
             <Image src={logo} alt="Front On Food logo" width={45} height={36} />
