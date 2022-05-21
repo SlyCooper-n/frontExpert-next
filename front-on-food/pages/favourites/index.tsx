@@ -1,4 +1,4 @@
-import React, { ReactComponentElement } from "react";
+import { NextPage } from "next";
 
 export default function Favourites() {
   return <div>Favourites</div>;
