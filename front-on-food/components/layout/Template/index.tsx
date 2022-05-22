@@ -13,7 +13,9 @@ export default function Template({ type, children }: TemplateProps) {
       </Head>
 
       <Header />
-      <main className="mx-auto my-8 max-w-7xl flex-1 px-2">{children}</main>
+      <main className="mx-auto my-8 w-full max-w-7xl flex-1 px-2">
+        {children}
+      </main>
       <Footer />
     </div>
   );
