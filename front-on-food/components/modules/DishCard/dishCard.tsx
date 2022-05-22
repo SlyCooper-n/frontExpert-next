@@ -1,8 +1,9 @@
 import { IconHeart } from "@/icons";
+import { DishType } from "@/types";
 import Image from "next/image";
 import DishDetails from "./dishDetails";
 
-export function DishCard() {
+export function DishCard(props: DishType) {
   return (
     <article>
       <div className="relative">
@@ -11,26 +12,31 @@ export function DishCard() {
         </button>
 
         <Image
-          src="https://storage.googleapis.com/onfood/peperoni.jpg"
-          alt="test"
+          src={props.picture}
+          alt={props.name}
           width={592}
           height={312}
           className="rounded-3xl"
+          priority
         />
       </div>
 
       <section className="my-4 flex justify-between">
-        <h3 className="text-xl font-bold">Place name</h3>
+        <h3 className="text-xl font-bold">{props.name}</h3>
 
         <span className="rounded-lg bg-indigo-200 px-2 py-1 font-semibold text-indigo-700">
-          Taxes Delivery
+          {props.tags[0].name}
         </span>
       </section>
 
       <section className="flex gap-4">
-        <DishDetails type="review" main="(13)" secondary="4.5" />
-        <DishDetails type="category" main="category" />
-        <DishDetails type="delivery" main="15-20 min" />
+        <DishDetails
+          type="review"
+          main={props.reviews}
+          secondary={props.rate}
+        />
+        <DishDetails type="category" main={props.category} />
+        <DishDetails type="delivery" main={props.deliveryEstimate} />
       </section>
     </article>
   );
