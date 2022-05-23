@@ -16,7 +16,7 @@ export function Header() {
           </a>
         </Link>
 
-        <ul className="mt-10 flex gap-4">
+        <ul className="mt-10 flex gap-4 md:mt-0">
           <li>
             <Link href="/">
               <a
