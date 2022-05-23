@@ -9,6 +9,10 @@ export default function Template({ type, children }: TemplateProps) {
       <Head>
         <meta charSet="utf-8" />
         <title>Front On Food</title>
+        <meta
+          name="description"
+          content="Front On Food is not my creation. I made this with Daniel Castro to practise React and Next.js"
+        />
         <link rel="icon" href="/images/logo.png" />
       </Head>
 

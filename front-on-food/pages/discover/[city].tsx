@@ -1,16 +1,18 @@
 import { DishList } from "@/modules";
 import { api } from "@/services";
-import { DiscoverProps, DishParams, DishRoutes } from "@/types";
+import { DiscoverProps, DishParams, DishRoutes, DishType } from "@/types";
 import Template from "components/layout/Template";
 import { useRouter } from "next/router";
 import React from "react";
 
-type City = "sao-paulo-sp" | "florianopolis-sc" | "porto-alegre-rs";
+// type City = "sao-paulo-sp" | "florianopolis-sc" | "porto-alegre-rs";
 
-export default function Discover(props: DiscoverProps) {
-  const { city } = props;
+export default function Discover(props: {
+  list: DishType[];
+  city: DishRoutes;
+}) {
+  const { city, list } = props;
 
-  console.log(city);
   // const router = useRouter();
   // let city: string;
 
@@ -35,9 +37,9 @@ export default function Discover(props: DiscoverProps) {
           Options in your region of {city.name}
         </h2>
 
-        <p className="mb-8 text-sm">We found {city.catalogEstimated} options</p>
+        <p className="mb-8 text-sm">We found {list.length} options</p>
 
-        <DishList city={city.slug} />
+        <DishList listContent={list} />
       </section>
     </Template>
   );
@@ -58,13 +60,16 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context: DishParams) {
-  const res = await api.get<DishRoutes>(
-    `/cities?citySlug=${context.params.city}`
+  const res = await api.get<DishType>(
+    `/deliveries?city=${context.params.city}`
   );
-  const city = res.data;
+  const list = res.data;
+  const res2 = await api.get(`/cities?citySlug=${context.params.city}`);
+  const city = res2.data;
 
   return {
     props: {
+      list,
       city,
     },
     revalidate: 60 * 60 * 24 * 30, // revalidate after a month

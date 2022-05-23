@@ -1,14 +1,18 @@
 import { IconHeart } from "@/icons";
 import { DishType } from "@/types";
+import { useGlobalContext } from "context";
+import { ContextType } from "core/types/context";
 import Image from "next/image";
 import DishDetails from "./dishDetails";
 
 export function DishCard(props: DishType) {
+  // const { setFavList } = useGlobalContext();
+
   return (
     <article>
       <div className="relative">
-        <button className="absolute right-0 z-10 mx-2 my-3 rounded-xl bg-brand-50 p-2">
-          <IconHeart className="w-5" />
+        <button className="group absolute right-0 z-10 mx-2 my-3 rounded-xl bg-brand-50 p-2">
+          <IconHeart className="w-5 transition-colors group-hover:text-pink-600" />
         </button>
 
         <Image
